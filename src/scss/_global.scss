@@ -1,0 +1,72 @@
+* {
+    box-sizing: border-box;
+}
+
+.app-container {
+    position: relative;
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    font-family: $secondary-font;
+    font-size: 16px;
+    transition: all ease-out .5s;
+    overflow: hidden;
+}
+
+.btn-container {
+    display: flex;
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.btn {
+    display: block;
+    font-size: 1.250em;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-family: $primary-font;
+    padding: 10px 30px;
+    border-radius: 50px;
+    background-color: transparent;
+    transition: all ease-out .2s;
+}
+
+.title {
+    font-family: $primary-font;
+    font-size: 3.000em;
+    margin: 0;
+    font-weight: 400;
+}
+
+.todo {
+    .btn {
+        color: $todo-dark;
+        border: 3px solid $todo-dark;
+        &:hover {
+            background-color: $todo-dark;
+            color: #FFF;
+        }
+    }
+}
+
+.done {
+    .btn {
+        color: $done-dark;
+        border: 3px solid $done-dark;
+        &:hover {
+            background-color: $done-dark;
+            color: #FFF;
+        }
+    }
+}
+
+.task {
+    .btn {
+        color: $task-dark;
+        border: 3px solid $task-dark;
+        &:hover {
+            background-color: $task-dark;
+            color: #FFF; 
+        }
+    }
+}

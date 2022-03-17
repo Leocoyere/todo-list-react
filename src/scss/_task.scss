@@ -1,0 +1,128 @@
+.tasks-wrapper {
+    transition: all ease-out .5s;
+    overflow: hidden;
+}
+
+.todo {
+    .task-subtitle {
+        color: $todo-dark;
+    }
+    .image-container {
+        &::after {
+            background-color: $todo-light;
+        }
+        .task-image {
+            background: url(../assets/images/calendar.png);
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+    }
+}
+
+.done {
+    .task-subtitle {
+        color: $done-dark;
+    }
+    .image-container {
+        &::after {
+            background-color: $done-light;
+        }
+        .task-image {
+            background: url(../assets/images/bell.png);
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+    }
+}
+
+.task {
+    .task-subtitle {
+        color: $task-dark;
+    }
+}
+
+.task-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    height: 100vh;
+    margin: 0 auto;
+    padding-top: 20%;
+    transition: all ease-out .5s;
+}
+
+.task-subtitle {
+    font-family: $primary-font;
+    font-size: 1.125em;
+    text-transform: uppercase;
+    font-weight: 400;
+    margin-top: 0;
+    transition: color ease-out .2s;
+}
+
+.task-content {
+    margin: 50px 0;
+}
+
+.task-navigation {
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    transform: translateY(-50%);
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    span {
+        font-family: $primary-font;
+        font-size: 1.125em;
+    }
+}
+
+.navigation-arrow {
+    &:nth-of-type(1) {
+        transform: rotate(180deg);
+    }
+}
+
+.image-container {
+    position: absolute;
+    top: 10%;
+    right: 0;
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+
+    &::after {
+        content: "";
+        z-index: -1;
+        position: absolute;
+        top: 0;
+        left: -10px;
+        width: 100px;
+        height: 100px;
+        border-radius: 100%;
+        opacity: .5;
+        transition: background-color ease-out .2s;
+    }
+
+    span {
+        display: block;
+        padding-top: 10px;
+        width: 100%;
+        font-size: 1.500em;
+        font-family: $primary-font;
+        color: #FFF;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    .task-image {
+        position: absolute;
+        bottom: -70%;
+        right: -70%;
+        width: 150px;
+        height: 150px;
+        transition: all ease-out .2s;
+    }
+}

@@ -1,0 +1,106 @@
+.column-container {
+    position: absolute;
+    z-index: 100;
+    width: 28%;
+    height: 100vh;
+    transition: background-color ease-out .2s;
+    
+    &.todo {
+        background-color: $todo-light;
+    .column-btn {
+        background-color: $todo-light;
+    }
+}
+    
+    &.done {
+        background-color: $done-light;
+        .column-btn {
+            background-color: $done-light;
+        }
+    }
+    
+    &.task {
+        background-color: $task-light;
+        .column-btn {
+            background-color: $task-light;
+        }
+    }
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+    animation-play-state: paused;
+}
+
+.column-btn {
+    position: absolute;
+    top: 50%;
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: $primary-font;
+    font-size: 4.500em;
+    color: #FFF;
+    transition: background-color ease-out .2s;
+
+    &.right {
+        right: 0;
+        transform: translateY(-50%) translateX(50%);
+    }
+
+    &.left {
+        left: 0;
+        transform: translateY(-50%) translateX(-50%);
+    }
+
+    &.none {
+        display: none;
+    }
+}
+
+@keyframes column-right {
+    0% {
+        width: 28%;
+        left: 0;
+        right: auto;
+    }
+    30% {
+        width: 0%;
+        left: -100px;
+        right: auto;
+    }
+    60% {
+        width: 0%;
+        left: auto;
+        right: -100px;
+    }
+    100% {
+        width: 28%;
+        left: auto;
+        right: 0;
+    }
+}
+
+@keyframes column-left {
+    0% {
+        width: 28%;
+        left: auto;
+        right: 0;
+    }
+    30% {
+        width: 0%;
+        left: auto;
+        right: -100px;
+    }
+    60% {
+        width: 0%;
+        left: -100px;
+        right: auto;
+    }
+    100% {
+        width: 28%;
+        left: 0;
+        right: auto;
+    }
+}
