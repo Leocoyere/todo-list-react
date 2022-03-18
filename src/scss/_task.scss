@@ -4,54 +4,31 @@
 }
 
 .todo {
-    .task-subtitle {
-        color: $todo-dark;
-    }
     .image-container {
-        &::after {
-            background-color: $todo-light;
-        }
-        .task-image {
-            background: url(../assets/images/calendar.png);
-            background-repeat: no-repeat;
-            background-size: contain;
-        }
+        background-color: $todo-light;
     }
 }
 
 .done {
-    .task-subtitle {
-        color: $done-dark;
-    }
     .image-container {
-        &::after {
-            background-color: $done-light;
-        }
-        .task-image {
-            background: url(../assets/images/bell.png);
-            background-repeat: no-repeat;
-            background-size: contain;
-        }
-    }
-}
-
-.task {
-    .task-subtitle {
-        color: $task-dark;
+        background-color: $done-light;
     }
 }
 
 .task-container {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     width: 100%;
-    max-width: 600px;
+    max-width: calc(80% - 70px);
     height: 100vh;
-    margin: 0 auto;
-    padding-top: 20%;
+    margin-left: 10%;
+    margin-right: calc(10% + 70px);
     transition: all ease-out .5s;
 }
 
-.task-subtitle {
+.subtitle {
     font-family: $primary-font;
     font-size: 1.125em;
     text-transform: uppercase;
@@ -62,11 +39,14 @@
 
 .task-content {
     margin: 50px 0;
+    max-height: 250px;
+    overflow-y: scroll;
 }
 
 .task-navigation {
     position: absolute;
     top: 50%;
+    width: 40px;
     right: 10%;
     transform: translateY(-50%);
     height: 150px;
@@ -76,6 +56,7 @@
     span {
         font-family: $primary-font;
         font-size: 1.125em;
+        text-align: center;
     }
 }
 
@@ -89,40 +70,58 @@
     position: absolute;
     top: 10%;
     right: 0;
-    width: 80px;
-    height: 80px;
+    width: 20vw;
+    height: 20vw;
+    min-width: 60px;
+    min-height: 60px;
+    max-width: 100px;
+    max-height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 100%;
-
-    &::after {
-        content: "";
-        z-index: -1;
-        position: absolute;
-        top: 0;
-        left: -10px;
-        width: 100px;
-        height: 100px;
-        border-radius: 100%;
-        opacity: .5;
-        transition: background-color ease-out .2s;
-    }
+    transition: background-color ease-out .2s;
+    opacity: .5;
 
     span {
         display: block;
-        padding-top: 10px;
-        width: 100%;
         font-size: 1.500em;
         font-family: $primary-font;
         color: #FFF;
-        text-align: center;
         text-transform: uppercase;
     }
+}
 
-    .task-image {
-        position: absolute;
-        bottom: -70%;
-        right: -70%;
+@media screen and (max-width: 500px) {
+    .task-navigation {
+        bottom: 5vw;
+        top: auto;
+        transform: none;
+        left: 10vw;
+        flex-direction: row;
         width: 150px;
-        height: 150px;
-        transition: all ease-out .2s;
+        align-items: center;
+        height: 100px;
+    }
+
+    .navigation-arrow {
+        width: 40px;
+
+        &:nth-of-type(1) {
+            transform: rotate(90deg);
+        }    
+        &:nth-of-type(2) {
+            transform: rotate(-90deg);
+        }
+    }
+
+    .task-container {
+        justify-content: flex-start;
+        padding-top: 50px;
+        max-width: 80%;
+    }
+
+    .image-container {
+        top: 50px;
     }
 }

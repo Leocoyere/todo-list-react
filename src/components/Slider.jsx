@@ -7,7 +7,7 @@ export default function Slider({children}) {
     const {currentPosition, setPosition, tasksArray, setStatus, setSlide, currentSlide, translateForm} = useContext(Context)
 	
     useEffect(() => {
-		if (tasksArray[0]) {
+		if (tasksArray[0] && translateForm !== 100) {
 			setStatus(tasksArray[currentPosition].state)
 		}
     })

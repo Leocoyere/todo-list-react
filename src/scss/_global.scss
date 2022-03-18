@@ -39,6 +39,9 @@
 }
 
 .todo {
+    .subtitle {
+        color: $todo-dark;
+    }
     .btn {
         color: $todo-dark;
         border: 3px solid $todo-dark;
@@ -50,6 +53,9 @@
 }
 
 .done {
+    .subtitle {
+        color: $done-dark;
+    }
     .btn {
         color: $done-dark;
         border: 3px solid $done-dark;
@@ -61,6 +67,9 @@
 }
 
 .task {
+    .subtitle {
+        color: $task-dark;
+    }
     .btn {
         color: $task-dark;
         border: 3px solid $task-dark;
@@ -68,5 +77,11 @@
             background-color: $task-dark;
             color: #FFF; 
         }
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .app-container {
+        font-size: 14px;
     }
 }

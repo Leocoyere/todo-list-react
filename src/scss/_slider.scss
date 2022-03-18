@@ -7,3 +7,15 @@
     overflow: hidden;
     transition: all ease-out .5s;
 }
+
+@media screen and (max-width: 1000px) {
+    .slider-container {
+        width: calc(100% - 150px);
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .slider-container {
+        width: 100%;
+    }
+}

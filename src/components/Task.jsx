@@ -29,17 +29,16 @@ export default function Task({ data }) {
         <div className={`task-container ${status}`}>
             <div className="column">
                 <h1 className="title">{data.title}</h1>
-                <h2 className={"task-subtitle"}>{data.category}</h2>
+                <h2 className="subtitle">{data.category}</h2>
                 <p className="task-content">{data.content}</p>
                 <div className="btn-container">
                     <button className={"btn"} onClick={() => handleChange(data.id)}>{buttonText}</button>
                     <button className={"btn"} onClick={() => handleDelete(data.id)}>Delete</button>
                 </div>
             </div>
-            {/* <div className={"image-container"}>
+            <div className={"image-container"}>
                 <span>{data.state}</span>
-                <div className="task-image"></div>
-            </div> */}
+            </div>
         </div>
     )
 }

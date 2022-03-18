@@ -3,19 +3,28 @@
     z-index: 100;
     width: 28%;
     height: 100vh;
-    transition: background-color ease-out .2s;
+    transition: all ease-out .2s;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+    animation-play-state: paused;
     
     &.todo {
         background-color: $todo-light;
-    .column-btn {
-        background-color: $todo-light;
+        .column-btn {
+            background-color: $todo-light;
+            &.left {
+                display: none;
+            }
+        }
     }
-}
     
     &.done {
         background-color: $done-light;
         .column-btn {
             background-color: $done-light;
+            &.left {
+                display: none;
+            }
         }
     }
     
@@ -23,11 +32,11 @@
         background-color: $task-light;
         .column-btn {
             background-color: $task-light;
+            &.right {
+                display: none;
+            }
         }
     }
-    animation-duration: .5s;
-    animation-fill-mode: forwards;
-    animation-play-state: paused;
 }
 
 .column-btn {
@@ -102,5 +111,36 @@
         width: 28%;
         left: 0;
         right: auto;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .column-container { 
+        max-width: 150px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .column-container { 
+        position: static;
+        max-width: 50px;
+        background-color: transparent !important;
+    }
+
+    .column-btn {
+        &.right {
+            bottom: 10vw;
+            top: auto;
+            right: 10vw;
+            transform: none;
+        }
+
+        &.left {
+            bottom: 10vw;
+            top: auto;
+            right: 10vw;
+            left: auto;
+            transform: none;
+        }
     }
 }
